@@ -1,0 +1,16 @@
+{
+  "name": "Protocol Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": true
+      },
+      "extensions": [
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
