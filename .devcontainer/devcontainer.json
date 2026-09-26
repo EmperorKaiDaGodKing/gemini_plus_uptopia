@@ -1,16 +1,30 @@
 {
   "name": "Protocol Development Environment",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
   "customizations": {
     "vscode": {
       "settings": {
         "editor.wordWrap": "on",
-        "files.trimTrailingWhitespace": true
+        "files.trimTrailingWhitespace": true,
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true
       },
       "extensions": [
-        "davidanson.vscode-markdownlint",
-        "esbenp.prettier-vscode"
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "davidanson.vscode-markdownlint"
       ]
     }
-  }
+  },
+  "postCreateCommand": "bash setup_repo.sh"
 }
